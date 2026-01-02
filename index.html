@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>First Rug in 2026 — RUG2026</title>
+
+<style>
+:root {
+  --text: #f2f2f2;
+  --muted: #9aa0aa;
+  --border: rgba(255,255,255,0.08);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  background: #04050a;
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* =======================
+   SOLANA BRUTAL BACKGROUND
+======================= */
+
+.bg,
+.bg::before,
+.bg::after {
+  position: fixed;
+  inset: -50%;
+  z-index: -3;
+  content: "";
+}
+
+.bg {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(153,69,255,0.45), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(0,255,163,0.35), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(20,241,149,0.25), transparent 50%);
+  filter: blur(120px);
+  animation: flow 18s linear infinite;
+}
+
+.bg::before {
+  background:
+    linear-gradient(120deg,
+      rgba(153,69,255,0.15),
+      rgba(0,255,163,0.15),
+      rgba(20,241,149,0.15));
+  mix-blend-mode: screen;
+  animation: wave 14s ease-in-out infinite alternate;
+}
+
+.bg::after {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  opacity: 0.15;
+}
+
+/* =======================
+   ANIMATIONS
+======================= */
+
+@keyframes flow {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(12%, -10%) rotate(180deg); }
+  100% { transform: translate(0,0) rotate(360deg); }
+}
+
+@keyframes wave {
+  0% { transform: skewX(0deg) translateY(0); }
+  50% { transform: skewX(6deg) translateY(-6%); }
+  100% { transform: skewX(-6deg) translateY(6%); }
+}
+
+/* =======================
+   LAYOUT
+======================= */
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero {
+  text-align: center;
+  padding-top: 160px;
+}
+
+h1 {
+  font-size: clamp(48px, 7vw, 72px);
+  letter-spacing: -0.04em;
+  text-shadow:
+    0 0 30px rgba(153,69,255,0.6),
+    0 0 60px rgba(0,255,163,0.45);
+  animation: glitch 6s infinite;
+}
+
+.ticker {
+  margin-top: 14px;
+  letter-spacing: 0.4em;
+  font-size: 13px;
+  color: #a6ffe5;
+  text-shadow: 0 0 14px rgba(0,255,163,0.6);
+}
+
+.quotes {
+  margin-top: 48px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* =======================
+   CARDS
+======================= */
+
+.card {
+  margin-top: 20px;
+  padding: 40px;
+  background: rgba(10,12,20,0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.02),
+    0 30px 80px rgba(0,0,0,0.65);
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 0 0 1px rgba(0,255,163,0.4),
+    0 0 40px rgba(153,69,255,0.35);
+}
+
+/* =======================
+   TYPO
+======================= */
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-bottom: 14px;
+}
+
+p {
+  color: var(--muted);
+}
+
+ul {
+  list-style: none;
+  margin-top: 12px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+
+ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #14f195;
+}
+
+/* =======================
+   TOKEN GRID
+======================= */
+
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 26px;
+}
+
+.token-grid .card {
+  text-align: center;
+  font-weight: 500;
+}
+
+/* =======================
+   FOOTER
+======================= */
+
+footer {
+  text-align: center;
+  padding: 60px 24px;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, transparent, #03040a);
+}
+
+.final-line {
+  margin-top: 18px;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+}
+
+/* =======================
+   GLITCH
+======================= */
+
+@keyframes glitch {
+  0%, 95% { transform: none; }
+  96% { transform: skewX(3deg); }
+  97% { transform: skewX(-3deg); }
+  98% { transform: translateX(2px); }
+  99% { transform: translateX(-2px); }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<section class="hero">
+  <h1>First Rug in 2026</h1>
+  <div class="ticker">RUG2026</div>
+  <div class="quotes">
+    <p>If you understand the risk — welcome aboard.</p>
+     <p>“You know how this ends.”</p>
+  </div>
+</section>
+
+<section>
+  <h2>What is First Rug?</h2>
+  <p>First Rug in 2026 is a meme coin defined by risk.</p>
+  <div class="card">
+    <p>
+      In a market full of fake promises, hidden wallets, and imaginary roadmaps,
+we chose to state the risk instead of dressing it up.
+    </p><br/>
+    <p>
+      We don’t say “trust us.”<br/>
+      We say “you already know how this ends.”
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Why This Exists</h2>
+  <div class="card">
+    <p>
+      Because rugs happen.<br/>
+      Because pretending to be safe is the real scam<br/>
+    </p><br/>
+    <p>
+      Risk is stated.<br/>
+      Nothing is framed.<br/>
+    </p><br/>
+    <p><strong>The rest is up to you.</strong></p>
+  </div>
+</section>
+
+<section>
+  <h2>Roadmap</h2>
+  <div class="card">
+    <h3>Phase 1 — Launch</h3>
+    <ul>
+      <li>Token deployed</li>
+      <li>No utility</li>
+      <li>No roadmap promises</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Phase 2 — Suspicion</h3>
+    <ul>
+      <li>Community grows</li>
+      <li>Everyone waits for the rug</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Phase 3 — The Question</h3>
+    <ul>
+      <li>Will it rug?</li>
+      <!-- <li>Or was the warning the real value?</li> -->
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Token Info</h2>
+  <div class="token-grid">
+    <div class="card">Name: First Rug in 2026</div>
+    <div class="card">Ticker: $RUG2026</div>
+    <div class="card">Chain: Solana</div>
+  </div>
+</section>
+
+<section>
+  <h2>What We Promise</h2>
+  <div class="card">
+    <p><strong>Nothing.</strong></p><br/>
+    <p>
+      No guaranteed profits.<br/>
+      No “next 100x” lies.<br/>
+      No fake partnerships.
+    </p><br/>
+    <p>
+      Just a meme, a warning, and a community that understands the game.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Disclaimer</h2>
+  <p>
+    This is a meme coin.<br/>
+    Not financial advice.<br/>
+    Not an investment recommendation.
+  </p><br/>
+  <p>
+    If you’re here for certainty — you’re in the wrong place.<br/>
+    If you understand the risk — welcome aboard.
+  </p>
+</section>
+
+<footer>
+  <div>First Rug in 2026 — RUG2026</div>
+  <div class="final-line">You know how this ends.</div>
+</footer>
+
+</body>
+</html>
